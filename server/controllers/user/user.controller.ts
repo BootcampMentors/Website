@@ -1,5 +1,3 @@
-import { model } from 'mongoose';
-import { Request, Response } from 'express';
 import { GetUserController } from './user.get';
 import { PostUserController } from './user.post';
 import { PutUserController } from './user.put';

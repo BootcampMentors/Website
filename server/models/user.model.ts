@@ -1,5 +1,6 @@
 import { Schema, model } from 'mongoose';
 import { ValidateUtils } from '../utils/validators.util';
+import * as uniqueValidator from 'mongoose-unique-validator';
 
 const UserSchema = new Schema({
     username: {
@@ -18,6 +19,7 @@ const UserSchema = new Schema({
         type: String,
         required: true,
         maxlength: 255,
+        unique: true,
         validate: {
             validator: (email) => {
                 return /[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.+_-]+\.[a-zA-Z]+$/.test(email);
@@ -69,5 +71,7 @@ const UserSchema = new Schema({
         }
     ]
 }, { timestamps: true });
+
+UserSchema.plugin(uniqueValidator);
 
 model('user', UserSchema);

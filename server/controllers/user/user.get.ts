@@ -1,4 +1,4 @@
-import { model, Error } from 'mongoose';
+import { model } from 'mongoose';
 import { Request, Response } from 'express';
 import { IUserModel } from '../../formats/user.format';
 import { ServerResponse } from '../../formats/serverresponse.format';
@@ -15,12 +15,10 @@ export const GetUserController = {
                 if (!user) {
                     return res.status(400).json(getUserNotExistMessage());
                 }
+                user.password = undefined;
                 res.status(200).json(new ServerResponse(true, user));
             })
-            .catch((err: Error) => {
-                if (err.name === 'CastError') {
-                    return res.status(400).json(new ServerResponse(false, null, 'id invalid'));
-                }
+            .catch((err) => {
                 res.status(400).json(new ServerResponse(false, null, err));
             });
     },
@@ -30,14 +28,9 @@ export const GetUserController = {
                 if (!user) {
                     return res.status(400).json(getUserNotExistMessage());
                 }
-                res.status(200).json(new ServerResponse(true, user));
+                res.status(200).json(new ServerResponse(true, user.mentors));
             })
-            .catch((err) => {
-                if (err.name === 'CastError') {
-                    return res.status(400).json(new ServerResponse(false, null, 'id invalid'));
-                }
-                res.status(400).json(new ServerResponse(false, null, err));
-            });
+            .catch((err) => console.log(err));
     },
     mentees: (req: Request, res: Response) => {
         models.User.findById(req.params.id).populate('mentees').exec()
@@ -45,13 +38,8 @@ export const GetUserController = {
                 if (!user) {
                     return res.status(400).json(getUserNotExistMessage());
                 }
-                res.status(200).json(new ServerResponse(true, user));
-            }).catch((err) => {
-                if (err.name === 'CastError') {
-                    return res.status(400).json(new ServerResponse(false, null, 'id invalid'));
-                }
-                res.status(400).json(new ServerResponse(false, null, err));
-            });
+                res.status(200).json(new ServerResponse(true, user.mentees));
+            }).catch((err) => res.status(400).json(new ServerResponse(false, null, err)));
     },
     interests: (req: Request, res: Response) => {
         models.User.findById(req.params.id).populate('interests').exec()
@@ -59,13 +47,8 @@ export const GetUserController = {
                 if (!user) {
                     return res.status(400).json(getUserNotExistMessage());
                 }
-                res.status(200).json(new ServerResponse(true, user));
-            }).catch((err) => {
-                if (err.name === 'CastError') {
-                    return res.status(400).json(new ServerResponse(false, null, 'id invalid'));
-                }
-                res.status(400).json(new ServerResponse(false, null, err));
-            });
+                res.status(200).json(new ServerResponse(true, user.interests));
+            }).catch((err) => res.status(400).json(new ServerResponse(false, null, err)));
     },
     camp: (req: Request, res: Response) => {
         models.User.findById(req.params.id).populate('camp').exec()
@@ -73,13 +56,8 @@ export const GetUserController = {
                 if (!user) {
                     return res.status(400).json(getUserNotExistMessage());
                 }
-                res.status(200).json(new ServerResponse(true, user));
-            }).catch((err) => {
-                if (err.name === 'CastError') {
-                    return res.status(400).json(new ServerResponse(false, null, 'id invalid'));
-                }
-                res.status(400).json(new ServerResponse(false, null, err));
-            });
+                res.status(200).json(new ServerResponse(true, user.camp));
+            }).catch((err) => res.status(400).json(new ServerResponse(false, null, err)));
     },
     all: (req: Request, res: Response) => {
         models.User.findById(req.params.id)
@@ -92,13 +70,9 @@ export const GetUserController = {
                 if (!user) {
                     return res.status(400).json(getUserNotExistMessage());
                 }
+                user.password = undefined;
                 res.status(200).json(new ServerResponse(true, user));
-            }).catch((err) => {
-                if (err.name === 'CastError') {
-                    return res.status(400).json(new ServerResponse(false, null, 'id invalid'));
-                }
-                res.status(400).json(new ServerResponse(false, null, err));
-            });
+            }).catch((err) => res.status(400).json(new ServerResponse(false, null, err)));
     },
     getFromSession: (req: Request, res: Response) => {
         models.User.findById(req.session._id)
@@ -106,12 +80,8 @@ export const GetUserController = {
                 if (!user) {
                     return res.status(400).json(getUserNotExistMessage());
                 }
+                user.password = undefined;
                 res.status(200).json(new ServerResponse(true, user));
-            }).catch((err) => {
-                if (err.name === 'CastError') {
-                    return res.status(400).json(new ServerResponse(false, null, 'id invalid'));
-                }
-                res.status(400).json(new ServerResponse(false, null, err));
-            });
+            }).catch((err) => res.status(400).json(new ServerResponse(false, null, err)));
     }
 };

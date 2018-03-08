@@ -10,7 +10,7 @@ export interface IUser {
     isMentor: string;
     mentors: Array<IUser>;
     mentees: Array<IUser>;
-    camp: ICamp;
+    camp: ICamp | string;
     interests: Array<IInterest>;
 }
 
@@ -22,7 +22,7 @@ export class User implements IUser {
     isMentor: string;
     mentors: IUser[];
     mentees: IUser[];
-    camp: ICamp;
+    camp: ICamp | string;
     interests: IInterest[];
 }
 

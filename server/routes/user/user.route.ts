@@ -6,8 +6,8 @@ import { PostUserRoutes } from './post.route';
 import { PutUserRoutes } from './put.route';
 
 export const UserRoutes = (app: Express, rootRoute: string) => {
-    DeleteUserRoutes(app, rootRoute);
     GetUserRoutes(app, rootRoute);
     PostUserRoutes(app, rootRoute);
     PutUserRoutes(app, rootRoute);
+    DeleteUserRoutes(app, rootRoute);
 };
