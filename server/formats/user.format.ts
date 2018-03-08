@@ -1,4 +1,4 @@
-import { ICamp } from './camp.format';
+import { ICamp, ICampModel } from './camp.format';
 import { IInterest } from './interest.format';
 import { Document } from 'mongoose';
 
@@ -8,9 +8,9 @@ export interface IUser {
     password: string;
     isAdmin: string;
     isMentor: string;
-    mentors: Array<IUser>;
-    mentees: Array<IUser>;
-    camp: ICamp | string;
+    mentors: Array<IUserModel>;
+    mentees: Array<IUserModel>;
+    camp: ICampModel | string;
     interests: Array<IInterest>;
 }
 
@@ -20,9 +20,9 @@ export class User implements IUser {
     password: string;
     isAdmin: string;
     isMentor: string;
-    mentors: IUser[];
-    mentees: IUser[];
-    camp: ICamp | string;
+    mentors: IUserModel[];
+    mentees: IUserModel[];
+    camp: ICampModel | string;
     interests: IInterest[];
 }
 

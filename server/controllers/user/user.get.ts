@@ -30,7 +30,7 @@ export const GetUserController = {
                 }
                 res.status(200).json(new ServerResponse(true, user.mentors));
             })
-            .catch((err) => console.log(err));
+            .catch((err) => res.status(400).json(new ServerResponse(false, null, err)));
     },
     mentees: (req: Request, res: Response) => {
         models.User.findById(req.params.id).populate('mentees').exec()

@@ -2,6 +2,7 @@ import { Express } from 'express';
 import { resolve as pathResolve } from 'path';
 import { UserRoutes } from './user/user.route';
 import { CampRoutes } from './camp/camp.route';
+import { UserController } from '../controllers/user/user.controller';
 
 export const routes = (app: Express) => {
     CampRoutes(app, '/api/camp');

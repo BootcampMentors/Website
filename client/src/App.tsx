@@ -3,7 +3,18 @@ import './App.css';
 
 const logo = require('./logo.svg');
 
-class App extends React.Component {
+export interface Props {
+}
+
+export interface State {
+}
+
+class App extends React.Component<Props, State> {
+
+  constructor(props: Props) {
+    super(props);
+  }
+
   render() {
     return (
       <div className="App">
