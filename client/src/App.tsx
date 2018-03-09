@@ -3,15 +3,15 @@ import './App.css';
 
 const logo = require('./logo.svg');
 
-export interface Props {
+export interface IProps {
 }
 
-export interface State {
+export interface IState {
 }
 
-class App extends React.Component<Props, State> {
+class App extends React.Component<IProps, IState> {
 
-  constructor(props: Props) {
+  constructor(props: IProps) {
     super(props);
   }
 
