@@ -1,0 +1,114 @@
+.index-title-bg {
+    margin-top: 52px;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1496DC;
+    width: 100%;
+}
+
+.index-title-bg .temp-image {
+    background-image: url('./../../static/imgs/500x500.png');
+    width: 250px;
+    height: 250px;
+    background-size: cover;
+    margin: 0 auto;
+}
+
+.index-title-bg div #content-text {
+    text-align: center;
+    margin-top: 35px;
+    color: white;
+    width: 350px;
+}
+
+.bg-data-white {
+    background-color: white;
+}
+
+.desk-dash {
+    background-image: url('./../../static/imgs/home_desk.png');
+    width: 600px;
+    height: 118px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
+.index-subimage-bg {
+    display: flex;
+    width: 100%;
+    background-color: #1496DC;
+}
+
+.info-panel-container {
+    width: 100%;
+    text-align: center;
+}
+
+.info-item {
+    height: 370px;
+    padding: 15px;
+}
+
+.info-item .disp-1 {
+    background-image: url('./../../static/imgs/computer.png');
+    width: 160px;
+    height: 180px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
+.banner-container {
+    height: 220px;
+    background-image: url('./../../static/imgs/sign_up_banner.jpg');
+    background-size: 55%;
+    background-position: center center;
+    background-repeat: repeat-x repeat-y;
+    display: flex;
+    justify-content: center;
+    color: white;
+    align-items: center;
+}
+
+.banner-container h4 {
+    margin: 0 auto;
+}
+
+.btn-sign-up-index {
+    background-color: #ffc864;
+    border: none;
+    color: white;
+    width: 500px;
+}
+
+.btn-sign-up-index:hover {
+    background-color: #ffc864;
+}
+
+.btn-sign-up-index:focus {
+    outline: none;
+    box-shadow: none;
+    background-color: #ffc864;
+}
+
+.btn-sign-up-index:active {
+    animation: btn-clicked 300ms ease-in-out 0ms 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes btn-clicked {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(.97);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 767px) {}

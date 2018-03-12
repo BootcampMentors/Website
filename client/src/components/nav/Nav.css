@@ -1,0 +1,39 @@
+.data-right {
+    justify-content: flex-end;
+}
+
+.content-data-link {
+    color: #979592;
+    display: block;
+}
+
+.content-data-logo {
+    font-size: 1.5em;
+}
+
+.content-data-link:hover {
+    outline: none;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.button-link {
+    margin: 0 9px;
+}
+
+.button-link:last-child {
+    margin: 0px 13px;
+}
+
+@media (max-width: 991px) {
+    .button-link:first-child {
+        margin: 6px 0px;
+    }
+    .button-link {
+        margin: 13px 0px;
+    }
+    .button-link:last-child {
+        margin: 0px 0px;
+        margin-bottom: 6px;
+    }
+}

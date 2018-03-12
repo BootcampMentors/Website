@@ -1,5 +1,4 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Nunito|Open+Sans|Roboto');
+* {
+    font-family: 'Nunito', 'Montserrat', 'Roboto', 'Open Sans', sans-serif;
 }

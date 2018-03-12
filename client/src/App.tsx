@@ -1,8 +1,7 @@
 import * as React from 'react';
 import './App.css';
-
-const logo = require('./logo.svg');
-
+import { getNav } from './components/nav/Nav';
+import { getFrontPage } from './components/front-page/FrontPage';
 export interface IProps {
 }
 
@@ -16,13 +15,13 @@ class App extends React.Component<IProps, IState> {
   }
 
   render() {
+
+    const nav = getNav();
+    const page = getFrontPage();
     return (
       <div className="App">
-        {/* 
-            maybe try and use the logo as an svg? that would make it very nice because they are vectors
-          */}
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">Brand New Project</h1>
+        {nav}
+        {page}
       </div>
     );
   }
