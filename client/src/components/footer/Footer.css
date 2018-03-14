@@ -1,0 +1,14 @@
+.index-footer {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #fafafa
+}
+
+.index-footer span {
+    color: #AEBDC1;
+    display: block;
+    padding: 5px;
+}

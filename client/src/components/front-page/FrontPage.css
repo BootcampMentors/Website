@@ -1,5 +1,4 @@
 .index-title-bg {
-    margin-top: 52px;
     min-height: 500px;
     display: flex;
     justify-content: center;
@@ -73,8 +72,9 @@
     align-items: center;
 }
 
-.banner-container h4 {
-    margin: 0 auto;
+.banner-container div h4 {
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 .btn-sign-up-index {
@@ -82,21 +82,64 @@
     border: none;
     color: white;
     width: 500px;
+    transition: background-color 100ms ease-in-out;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .btn-sign-up-index:hover {
-    background-color: #ffc864;
+    background-color: #FFC84B;
 }
 
 .btn-sign-up-index:focus {
     outline: none;
     box-shadow: none;
-    background-color: #ffc864;
+    background-color: #FFC84B;
 }
 
 .btn-sign-up-index:active {
     animation: btn-clicked 300ms ease-in-out 0ms 1;
     animation-fill-mode: forwards;
+}
+
+.index-feature {
+    padding: 30px;
+    text-align: center;
+}
+
+.index-feature h1 {
+    font-size: 3.5em;
+}
+
+.feature {
+    display: flex;
+    max-width: 350px;
+    height: 100px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.feature-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-image img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+#feature1-image {
+    background: url('./../../static/imgs/125x125.png');
+    width: 125px;
+    height: 125px;
+    background-size: cover;
+}
+
+.feature-text {
+    display: flex;
+    align-items: center;
 }
 
 @keyframes btn-clicked {
@@ -112,3 +155,18 @@
 }
 
 @media (max-width: 767px) {}
+
+@media (max-width: 680px) {
+    .btn-sign-up-index {
+        width: 250px;
+    }
+}
+
+@media (max-width: 370px) {
+    .btn-sign-up-index {
+        width: 150px;
+    }
+    .banner-container div h4 {
+        font-size: 1.5em;
+    }
+}

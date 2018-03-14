@@ -1,0 +1,52 @@
+.about-banner {
+    height: 250px;
+    background: url('./../../static/imgs/sign_up_banner.jpg');
+    width: 100%;
+    background-size: 55% cover;
+    background-repeat: repeat-x repeat-y;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-banner h1 {
+    transform: scale(1.50);
+    color: white;
+    font-weight: 800;
+}
+
+.about-container  {
+    padding: 100px;
+    padding-top: 75px;   
+}
+
+.about-container p {
+    transform: scale(1.3);
+}
+
+.about-panel-container {
+    width: 100%;
+    text-align: center;
+    background: #fafafa;
+}
+
+.info-item .person-1 {
+    background-image: url('./../../static/imgs/computer.png');
+    border-radius: 150px;
+    border: 2px solid #ebebeb;
+    width: 160px;
+    height: 160px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
+.about-data {
+    color: #797979;
+}
+
+.about-panel-container div h1 {
+    padding-top: 75px;
+    padding-bottom: 25px;
+}

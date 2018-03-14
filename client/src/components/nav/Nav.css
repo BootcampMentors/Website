@@ -25,6 +25,10 @@
     margin: 0px 13px;
 }
 
+.link-active {
+    color: rgba(0, 0, 0, .7) !important;
+}
+
 @media (max-width: 991px) {
     .button-link:first-child {
         margin: 6px 0px;
@@ -35,5 +39,14 @@
     .button-link:last-child {
         margin: 0px 0px;
         margin-bottom: 6px;
+    }
+    .pusher {
+        height: 52px;
+    }
+}
+
+@media (min-width: 991px) {
+    .pusher {
+        height: 48px;
     }
 }

@@ -67,15 +67,131 @@ const getInfoPanels = () => {
     );
 };
 
+const getFeatures = () => {
+    return (
+        <div className="index-feature">
+            <h1>Network with other doers and thinkers</h1>
+            <h4>Talk to mentors that have hands on experience with:</h4>
+            <div className="container">
+                <div className="row">
+                    <div className="col-12 col-md-6 col-lg-4">
+                        <div className="feature container" >
+                            <div className="col-4 feature-image">
+                                <img src="https://noobhub-media.s3.amazonaws.com/category_images/C.png" />
+                            </div>
+                            <div className="col-8 feature-text">
+                                <h4>JavaScript</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12 col-md-6 col-lg-4">
+                        <div className="feature container" >
+                            <div className="col-4 feature-image">
+                                <img src="https://noobhub-media.s3.amazonaws.com/category_images/C.png" />
+                            </div>
+                            <div className="col-8 feature-text">
+                                <h4>JavaScript</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12 col-md-6 col-lg-4">
+                        <div className="feature container" >
+                            <div className="col-4 feature-image">
+                                <img src="https://noobhub-media.s3.amazonaws.com/category_images/C.png" />
+                            </div>
+                            <div className="col-8 feature-text">
+                                <h4>JavaScript</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12 col-md-6 col-lg-4">
+                        <div className="feature container" >
+                            <div className="col-4 feature-image">
+                                <img src="https://noobhub-media.s3.amazonaws.com/category_images/C.png" />
+                            </div>
+                            <div className="col-8 feature-text">
+                                <h4>JavaScript</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12 col-md-6 col-lg-4">
+                        <div className="feature container" >
+                            <div className="col-4 feature-image">
+                                <img src="https://noobhub-media.s3.amazonaws.com/category_images/C.png" />
+                            </div>
+                            <div className="col-8 feature-text">
+                                <h4>JavaScript</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12 col-md-6 col-lg-4">
+                        <div className="feature container" >
+                            <div className="col-4 feature-image">
+                                <img src="https://noobhub-media.s3.amazonaws.com/category_images/C.png" />
+                            </div>
+                            <div className="col-8 feature-text">
+                                <h4>JavaScript</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12 col-md-6 col-lg-4">
+                        <div className="feature container" >
+                            <div className="col-4 feature-image">
+                                <img src="https://noobhub-media.s3.amazonaws.com/category_images/C.png" />
+                            </div>
+                            <div className="col-8 feature-text">
+                                <h4>JavaScript</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12 col-md-6 col-lg-4">
+                        <div className="feature container" >
+                            <div className="col-4 feature-image">
+                                <img src="https://noobhub-media.s3.amazonaws.com/category_images/C.png" />
+                            </div>
+                            <div className="col-8 feature-text">
+                                <h4>JavaScript</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12 col-md-6 col-lg-4">
+                        <div className="feature container" >
+                            <div className="col-4 feature-image">
+                                <img src="https://noobhub-media.s3.amazonaws.com/category_images/C.png" />
+                            </div>
+                            <div className="col-8 feature-text">
+                                <h4>Job Search</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
 export const getFrontPage = () => {
     const header = getLogoHeader();
     const panels = getInfoPanels();
     const signUp = getSignUpBanner();
+    const features = getFeatures();
     return (
         <div>
             {header}
             {panels}
             {signUp}
+            {features}
         </div>
     );
 };
+
+export class FrontPage extends React.Component {
+    render() {
+        const frontPage = getFrontPage();
+        return (
+            <div>
+                {frontPage}
+            </div>
+        );
+    }
+}
