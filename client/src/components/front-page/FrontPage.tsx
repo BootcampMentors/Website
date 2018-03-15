@@ -7,7 +7,8 @@ const getLogoHeader = () => {
             <div className="index-title-bg">
                 <div>
                     <div className="temp-image" />
-                    <h5 id="content-text">A community of peers working together in software.</h5>
+                    <h1>Bootcamp Mentors</h1>
+                    <h5 id="content-text">A community of peers learning together in software</h5>
                 </div>
             </div>
             <div className="index-subimage-bg">
@@ -57,7 +58,7 @@ const getInfoPanels = () => {
                             Celebrate success
                         </h3>
                         <h5 className="desc-data">
-                            Set your self up for success with more resources available to you to help be your very best.
+                            Set yourself up for success with more resources available to you to help be your very best.
                         </h5></div>
                 </div>
             </div>
@@ -68,7 +69,7 @@ const getInfoPanels = () => {
 const getFeatures = () => {
     return (
         <div className="index-feature">
-            <h1>Network with other doers and thinkers</h1>
+            <h1>Join our community of doers and thinkers</h1>
             <h5>Talk to mentors that have hands-on experience with:</h5>
             <div className="container">
                 <div className="row">

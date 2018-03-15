@@ -12,15 +12,22 @@ export class AboutUs extends Component {
                     <h1>About Us</h1>
                 </div>
                 <div className="container about-container">
+                    <h1>Who we are</h1>
                     <p>
-                        Occaecat enim nostrud minim labore ex nisi laborum deserunt est.
-                        Non mollit laboris ad mollit excepteur tempor laborum pariatur sint
-                        tempor mollit. Fugiat ullamco velit nulla nulla do enim et quis sit magna
-                        aliqua. Anim eu deserunt anim cillum cupidatat quis minim aute elit ipsum et magna.
-                        Sunt ullamco enim anim id aliquip consequat dolor minim fugiat sint sint.
-                        Occaecat enim nostrud minim labore ex nisi laborum deserunt est.
-                        Non mollit laboris ad mollit excepteur tempor laborum pariatur sint
-                        tempor mollit. Fugiat ullamco velit nulla nulla do enim et quis sit magna
+                        We are a team of pro bono software developers and industry professionals working to 
+                        bridge the gap between students and graduates of coding bootcamps. 
+
+                        Bootcampers are driven, determined individuals and we wanted to pair them
+                        up with mentors to match.
+                        <br/><br/>
+                        As alumni of <a href="https://codingdojo.com">Coding Dojo</a> ourselves, 
+                        our mission is to reach back out to students in order to grow the community
+                        between peers sharing the same goal — learning new technologies and improving our skillsets.
+                        Mentors and students alike, we never stop learning.
+                        <br/><br/>
+                        Our vision is to connect like-minded individuals with qualified mentors who 
+                        enjoy helping and want to see others succeed. Bootcamp Mentors can help
+                        you accomplish your goals, no matter where you are in your coding journey!
                     </p>
                 </div>
                 <div className="about-panel-container">
@@ -30,31 +37,30 @@ export class AboutUs extends Component {
                             <div className="col-12 col-md-4 info-item">
                                 <div className="person-1" />
                                 <h3 className="title-data">
-                                    Emil Choparinov 
+                                    Brian Kang
                                 </h3>
-                                <h5 className="about-data">
-                                    Nulla fugiat occaecat mollit reprehenderit
-                                    eu nisi veniam dolor et in mollit laborum proident.
+                                <h5 className="desc-data">
+                                    Founder / Developer
                                 </h5>
                             </div>
                             <div className="col-12 col-md-4 info-item">
-                                <div className="person-1" />
+                                <div className="person-2" />
                                 <h3 className="title-data">
-                                    Learn
+                                    Emil Choparinov 
                                 </h3>
-                                <h5 className="desc-data">
-                                    Nulla fugiat occaecat mollit reprehenderit
-                                    eu nisi veniam dolor et in mollit laborum proident.
-                        </h5></div>
+                                <h5 className="about-data">
+                                    Developer
+                                </h5>
+                            </div>
                             <div className="col-12 col-md-4 info-item">
-                                <div className="person-1" />
+                                <div className="person-3" />
                                 <h3 className="title-data">
-                                    Learn
+                                    Bill Fungi
                                 </h3>
                                 <h5 className="desc-data">
-                                    Nulla fugiat occaecat mollit reprehenderit
-                                    eu nisi veniam dolor et in mollit laborum proident.
-                        </h5></div>
+                                    Community Manager
+                                </h5>
+                            </div>
                         </div>
                     </div>
                 </div>

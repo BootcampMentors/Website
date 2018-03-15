@@ -8,7 +8,7 @@
 }
 
 .index-title-bg .temp-image {
-    background-image: url('./../../static/imgs/bootcamp.png');
+    background-image: url('./../../static/imgs/mlogo.png');
     width: 250px;
     height: 250px;
     background-size: cover;
@@ -20,6 +20,12 @@
     margin-top: 35px;
     color: white;
     width: 350px;
+}
+
+.index-title-bg h1 {
+    margin-top: 25px;
+    font-weight: 800;
+    color: white;
 }
 
 .bg-data-white {
