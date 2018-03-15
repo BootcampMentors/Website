@@ -69,7 +69,7 @@ const getFeatures = () => {
     return (
         <div className="index-feature">
             <h1>Network with other doers and thinkers</h1>
-            <h5>Talk to mentors that have hands on experience with:</h5>
+            <h5>Talk to mentors that have hands-on experience with:</h5>
             <div className="container">
                 <div className="row">
                     <div className="col-12 col-md-6 col-lg-4">
