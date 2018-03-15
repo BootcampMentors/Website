@@ -101,30 +101,31 @@
 .banner-container div h4 {
     margin-bottom: 15px;
     text-align: center;
+    font-weight: 800;
 }
 
 .btn-sign-up-index {
-    background-color: #ffc864;
+    background-color: #FFC864;
     border: none;
     color: white;
     width: 500px;
-    transition: background-color 100ms ease-in-out;
+    transition: background-color 200ms ease-in-out;
     text-align: center;
     margin: 0 auto;
 }
 
 .btn-sign-up-index:hover {
-    background-color: #FFC84B;
+    background-color: #ffbf4b;
 }
 
 .btn-sign-up-index:focus {
     outline: none;
     box-shadow: none;
-    background-color: #FFC84B;
+    background-color: #ffbf4b;
 }
 
 .btn-sign-up-index:active {
-    animation: btn-clicked 300ms ease-in-out 0ms 1;
+    animation: btn-clicked 350ms ease-in-out 0ms 1;
     animation-fill-mode: forwards;
 }
 
@@ -134,8 +135,9 @@
 }
 
 .index-feature h1 {
-    font-size: 3.5em;
+    font-size: 3em;
     color: #1496DC;
+    margin-top: 10px; 
 }
 
 .index-feature h5 {
@@ -147,7 +149,7 @@
     display: flex;
     max-width: 350px;
     height: 100px;
-    margin-top: 25px;
+    margin-top: 30px;
     width: 100%;
 }
 
