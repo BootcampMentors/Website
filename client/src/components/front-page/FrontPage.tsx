@@ -7,7 +7,7 @@ const getLogoHeader = () => {
             <div className="index-title-bg">
                 <div>
                     <div className="temp-image" />
-                    <h3 id="content-text">Proident minim magna sunt ex ut et dolor ipsum cupidatat commodo dolor.</h3>
+                    <h5 id="content-text">A community of peers working together in software.</h5>
                 </div>
             </div>
             <div className="index-subimage-bg">
@@ -35,31 +35,29 @@ const getInfoPanels = () => {
                 <div className="row">
                     <div className="col-12 col-md-4 info-item">
                         <div className="disp-1" />
-                        <h3 className="title-data">
+                        <h3 className="title-data red-font">
                             Learn
                         </h3>
                         <h5 className="desc-data">
-                            Nulla fugiat occaecat mollit reprehenderit
-                            eu nisi veniam dolor et in mollit laborum proident.
+                            Learn from peer mentors the best ways to 
+                            become a successful developer in today's industry.
                         </h5>
                     </div>
                     <div className="col-12 col-md-4 info-item">
-                        <div className="disp-1" />
-                        <h3 className="title-data">
-                            Learn
+                        <div className="disp-2" />
+                        <h3 className="title-data red-font">
+                            Connect
                         </h3>
                         <h5 className="desc-data">
-                            Nulla fugiat occaecat mollit reprehenderit
-                            eu nisi veniam dolor et in mollit laborum proident.
+                            Connect with people who were just in your shoes, eager to help and still hungry to learn.
                         </h5></div>
                     <div className="col-12 col-md-4 info-item">
-                        <div className="disp-1" />
-                        <h3 className="title-data">
-                            Learn
+                        <div className="disp-3" />
+                        <h3 className="title-data red-font">
+                            Celebrate success
                         </h3>
                         <h5 className="desc-data">
-                            Nulla fugiat occaecat mollit reprehenderit
-                            eu nisi veniam dolor et in mollit laborum proident.
+                            Set your self up for success with more resources available to you to help be your very best.
                         </h5></div>
                 </div>
             </div>
@@ -71,7 +69,7 @@ const getFeatures = () => {
     return (
         <div className="index-feature">
             <h1>Network with other doers and thinkers</h1>
-            <h4>Talk to mentors that have hands on experience with:</h4>
+            <h5>Talk to mentors that have hands on experience with:</h5>
             <div className="container">
                 <div className="row">
                     <div className="col-12 col-md-6 col-lg-4">
@@ -80,7 +78,37 @@ const getFeatures = () => {
                                 <img src="https://noobhub-media.s3.amazonaws.com/category_images/C.png" />
                             </div>
                             <div className="col-8 feature-text">
-                                <h4>JavaScript</h4>
+                                <h4>C#</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12 col-md-6 col-lg-4">
+                        <div className="feature container" >
+                            <div className="col-4 feature-image">
+                                <img src="https://noobhub-media.s3.amazonaws.com/category_images/C.png" />
+                            </div>
+                            <div className="col-8 feature-text">
+                                <h4>CSS</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12 col-md-6 col-lg-4">
+                        <div className="feature container" >
+                            <div className="col-4 feature-image">
+                                <img src="https://noobhub-media.s3.amazonaws.com/category_images/C.png" />
+                            </div>
+                            <div className="col-8 feature-text">
+                                <h4>HTML</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12 col-md-6 col-lg-4">
+                        <div className="feature container" >
+                            <div className="col-4 feature-image">
+                                <img src="https://noobhub-media.s3.amazonaws.com/category_images/C.png" />
+                            </div>
+                            <div className="col-8 feature-text">
+                                <h4>Java</h4>
                             </div>
                         </div>
                     </div>
@@ -100,57 +128,7 @@ const getFeatures = () => {
                                 <img src="https://noobhub-media.s3.amazonaws.com/category_images/C.png" />
                             </div>
                             <div className="col-8 feature-text">
-                                <h4>JavaScript</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-12 col-md-6 col-lg-4">
-                        <div className="feature container" >
-                            <div className="col-4 feature-image">
-                                <img src="https://noobhub-media.s3.amazonaws.com/category_images/C.png" />
-                            </div>
-                            <div className="col-8 feature-text">
-                                <h4>JavaScript</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-12 col-md-6 col-lg-4">
-                        <div className="feature container" >
-                            <div className="col-4 feature-image">
-                                <img src="https://noobhub-media.s3.amazonaws.com/category_images/C.png" />
-                            </div>
-                            <div className="col-8 feature-text">
-                                <h4>JavaScript</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-12 col-md-6 col-lg-4">
-                        <div className="feature container" >
-                            <div className="col-4 feature-image">
-                                <img src="https://noobhub-media.s3.amazonaws.com/category_images/C.png" />
-                            </div>
-                            <div className="col-8 feature-text">
-                                <h4>JavaScript</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-12 col-md-6 col-lg-4">
-                        <div className="feature container" >
-                            <div className="col-4 feature-image">
-                                <img src="https://noobhub-media.s3.amazonaws.com/category_images/C.png" />
-                            </div>
-                            <div className="col-8 feature-text">
-                                <h4>JavaScript</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-12 col-md-6 col-lg-4">
-                        <div className="feature container" >
-                            <div className="col-4 feature-image">
-                                <img src="https://noobhub-media.s3.amazonaws.com/category_images/C.png" />
-                            </div>
-                            <div className="col-8 feature-text">
-                                <h4>JavaScript</h4>
+                                <h4>Python</h4>
                             </div>
                         </div>
                     </div>
@@ -161,6 +139,26 @@ const getFeatures = () => {
                             </div>
                             <div className="col-8 feature-text">
                                 <h4>Job Search</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12 col-md-6 col-lg-4">
+                        <div className="feature container" >
+                            <div className="col-4 feature-image">
+                                <img src="https://noobhub-media.s3.amazonaws.com/category_images/C.png" />
+                            </div>
+                            <div className="col-8 feature-text">
+                                <h4>Portfolios</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-12 col-md-6 col-lg-4">
+                        <div className="feature container" >
+                            <div className="col-4 feature-image">
+                                <img src="https://noobhub-media.s3.amazonaws.com/category_images/C.png" />
+                            </div>
+                            <div className="col-8 feature-text">
+                                <h4>Interviews</h4>
                             </div>
                         </div>
                     </div>

@@ -8,7 +8,7 @@
 }
 
 .index-title-bg .temp-image {
-    background-image: url('./../../static/imgs/500x500.png');
+    background-image: url('./../../static/imgs/bootcamp.png');
     width: 250px;
     height: 250px;
     background-size: cover;
@@ -47,12 +47,38 @@
 }
 
 .info-item {
-    height: 370px;
-    padding: 15px;
+    height: 460px;
+    padding: 60px 40px 40px 40px;
+}
+
+.info-item h3 {
+    color: #F08380;
+}
+
+.info-item h5 {
+    color: grey;
 }
 
 .info-item .disp-1 {
     background-image: url('./../../static/imgs/computer.png');
+    width: 160px;
+    height: 180px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
+.info-item .disp-2 {
+    background-image: url('./../../static/imgs/network.png');
+    width: 160px;
+    height: 180px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
+.info-item .disp-3 {
+    background-image: url('./../../static/imgs/winner.png');
     width: 160px;
     height: 180px;
     background-size: contain;
@@ -109,6 +135,12 @@
 
 .index-feature h1 {
     font-size: 3.5em;
+    color: #1496DC;
+}
+
+.index-feature h5 {
+    color: grey;
+    margin-top: 20px;
 }
 
 .feature {
