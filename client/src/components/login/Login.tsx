@@ -44,27 +44,22 @@ class Login extends React.Component<IProps, IState> {
     }
 
     handleLogin = () => {
-        if (!isEmail(this.state.email)) {
-            this.setState({ emailError: 'Email is invalid' });
-        } else {
-            const user = new User();
-            user.email = this.state.email;
-            user.password = SHA256(this.state.password).toString();
-            axios.default.post(
-                routes.user.post.login(),
-                user
-            ).then((response: axios.AxiosResponse<IServerResponse<IUser>>) => {
-                this.props.onSetUser(response.data.output);
-                this.props.onLoginUser();
-                this.props.history.push('/dashboard');
-            }).catch((err: axios.AxiosError) => {
-                if (err.response && err.response.status === 403) {
-                    this.setState({ validationError: 'Credentials invalid' });
-                } else {
-                    console.error(err.response);
-                }
-            });
-        }
+        this._checkEmailValidation();
+        const user: IUser = this._getStateAsUser();
+        axios.default.post(
+            routes.user.post.login(),
+            user
+        ).then((response: axios.AxiosResponse<IServerResponse<IUser>>) => {
+            this.props.onSetUser(response.data.output);
+            this.props.onLoginUser();
+            this.props.history.push('/dashboard');
+        }).catch((err: axios.AxiosError) => {
+            if (err.response && err.response.status === 403) {
+                this.setState({ validationError: 'Credentials invalid' });
+            } else {
+                console.error(err.response);
+            }
+        });
     }
 
     render() {
@@ -109,6 +104,21 @@ class Login extends React.Component<IProps, IState> {
                 </div>
             </div>
         );
+    }
+
+    private _checkEmailValidation = () => {
+        if (!isEmail(this.state.email)) {
+            this.setState({ emailError: 'Email is invalid' });
+        } else {
+            this.setState({ emailError: '' });
+        }
+    }
+
+    private _getStateAsUser = (): IUser => {
+        const user = new User();
+        user.email = this.state.email;
+        user.password = SHA256(this.state.password).toString();
+        return user;
     }
 }
 
