@@ -8,7 +8,7 @@
 }
 
 .index-title-bg .temp-image {
-    background-image: url('./../../static/imgs/mlogo.png');
+    background-image: url('/static/imgs/mlogo.png');
     width: 250px;
     height: 250px;
     background-size: cover;
@@ -33,7 +33,7 @@
 }
 
 .desk-dash {
-    background-image: url('./../../static/imgs/home_desk.png');
+    background-image: url('/static/imgs/home_desk.png');
     width: 600px;
     height: 118px;
     background-size: contain;
@@ -66,7 +66,7 @@
 }
 
 .info-item .disp-1 {
-    background-image: url('./../../static/imgs/computer.png');
+    background-image: url('/static/imgs/computer.png');
     width: 160px;
     height: 180px;
     background-size: contain;
@@ -75,7 +75,7 @@
 }
 
 .info-item .disp-2 {
-    background-image: url('./../../static/imgs/network.png');
+    background-image: url('/static/imgs/network.png');
     width: 160px;
     height: 180px;
     background-size: contain;
@@ -84,7 +84,7 @@
 }
 
 .info-item .disp-3 {
-    background-image: url('./../../static/imgs/winner.png');
+    background-image: url('https://image.flaticon.com/icons/svg/562/562826.svg');
     width: 160px;
     height: 180px;
     background-size: contain;
@@ -94,7 +94,7 @@
 
 .banner-container {
     height: 220px;
-    background-image: url('./../../static/imgs/sign_up_banner.jpg');
+    background-image: url('/static/imgs/sign_up_banner.jpg');
     background-size: 55%;
     background-position: center center;
     background-repeat: repeat-x repeat-y;
@@ -145,7 +145,7 @@
 .index-feature h1 {
     font-size: 3em;
     color: #1496DC;
-    margin-top: 10px; 
+    margin-top: 10px;
 }
 
 .index-feature h5 {
@@ -173,7 +173,7 @@
 }
 
 #feature1-image {
-    background: url('./../../static/imgs/125x125.png');
+    background: url('/static/imgs/125x125.png');
     width: 125px;
     height: 125px;
     background-size: cover;
@@ -211,4 +211,9 @@
     .banner-container div h4 {
         font-size: 1.5em;
     }
+}
+
+.svg {
+    width: 100%;
+    height: 100%;
 }

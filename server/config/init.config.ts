@@ -24,7 +24,14 @@ server.use(
 
 server.use(
     express.static(
-        joinPaths(__dirname, './../../client/build/index.html')
+        joinPaths(__dirname, './../../client/build/')
+    )
+);
+
+server.use(
+    '/static',
+    express.static(
+        joinPaths(__dirname, './../static')
     )
 );
 

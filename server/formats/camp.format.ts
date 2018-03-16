@@ -18,11 +18,3 @@ export class Camp implements ICamp {
 export interface ICampModel extends ICamp, Document {
 
 }
-
-const routes = {
-    user: {
-        get: {
-            mentor: (id: string) => { return `/api/user/${id}/mentors/` }
-        }
-    }
-}

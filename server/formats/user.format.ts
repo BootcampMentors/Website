@@ -3,7 +3,7 @@ import { IInterest } from './interest.format';
 import { Document } from 'mongoose';
 
 export interface IUser {
-    username: string;
+    name: string;
     email: string;
     password: string;
     isAdmin: string;
@@ -15,7 +15,7 @@ export interface IUser {
 }
 
 export class User implements IUser {
-    username: string;
+    name: string;
     email: string;
     password: string;
     isAdmin: string;

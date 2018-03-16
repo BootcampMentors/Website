@@ -7,5 +7,5 @@ import { UserController } from '../controllers/user/user.controller';
 export const routes = (app: Express) => {
     CampRoutes(app, '/api/camp');
     UserRoutes(app, '/api/user');
-    app.get('*', (req, res) => res.sendFile(pathResolve(__dirname, './../../../client/build/index.html')));
+    app.get('*', (req, res) => res.sendFile(pathResolve(__dirname, './../../client/build/index.html')));
 };

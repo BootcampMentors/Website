@@ -3,7 +3,7 @@ import { ValidateUtils } from '../utils/validators.util';
 import * as uniqueValidator from 'mongoose-unique-validator';
 
 const UserSchema = new Schema({
-    username: {
+    name: {
         type: String,
         required: true,
         minlength: 2,
@@ -12,7 +12,7 @@ const UserSchema = new Schema({
             validator: (name) => {
                 return ValidateUtils.nameValidator(name);
             },
-            msg: 'username given invalid'
+            msg: 'name given invalid'
         }
     },
     email: {
