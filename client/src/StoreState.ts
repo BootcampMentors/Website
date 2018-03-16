@@ -4,4 +4,5 @@ import { ICamp } from './formats/Camp.format';
 export interface IStoreState {
     readonly user: IUser;
     readonly camps: Array<ICamp>;
+    readonly loginLogout: boolean;
 }

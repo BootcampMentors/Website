@@ -10,15 +10,19 @@ import { IUser } from '../../formats/User.format';
 import { IServerResponse } from '../../formats/ServerResponse';
 import { routes } from '../../Routes';
 import { RouteComponentProps } from 'react-router';
+import { setToLoggedOut, setToLoggedIn } from '../../actions/LoginLogout';
 
 interface IProps extends RouteComponentProps<string> {
+    setAsLoggedIn: () => void;
     user: IUser;
     onSetUser: (user: IUser) => { type: string, user: IUser };
     onRemoveUser: () => { type: string, user: IUser };
+    isLoggedIn: boolean;
+    onLoginUser: () => { type: string, isLoggedIn: boolean };
+    onLogoutUser: () => { type: string, isLoggedIn: boolean };
 }
 
 interface IState {
-    isLoggedIn: boolean;
     loggedOutRoutes: Array<IRouteType>;
     loggedInRoutes: Array<IRouteType>;
 }
@@ -33,7 +37,6 @@ class Nav extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
         this.state = {
-            isLoggedIn: false,
             loggedOutRoutes: [
                 {
                     to: '/about-us',
@@ -53,16 +56,22 @@ class Nav extends React.Component<IProps, IState> {
                     to: '/about-us',
                     title: 'About us',
                 },
+                {
+                    to: '/',
+                    title: 'Logout'
+                }
             ]
         };
     }
 
     async componentWillMount() {
         const response: axios.AxiosResponse<IServerResponse<IUser>> | void = await axios.default.get(routes.user.get.getsession())
-            .catch((err) => console.log());
+            .catch((err: axios.AxiosError) => {
+                return;
+            });
         if (response && response.data.success) {
             this.props.onSetUser(response.data.output);
-            this.setState({ isLoggedIn: true });
+            this.props.onLoginUser();
             this.props.history.push('/dashboard');
         } else {
             this.props.history.push('/');
@@ -71,36 +80,18 @@ class Nav extends React.Component<IProps, IState> {
 
     handleLogout = () => {
         this.props.onRemoveUser();
-        this.setState({ isLoggedIn: false });
+        this.props.onLogoutUser();
         axios.default.get(routes.user.get.logout())
-            .catch((err) => console.log());
+            .catch(() => { return; });
         this.props.history.push('/');
     }
 
     render() {
-        let logout, links, logoClick;
-        if (this.state.isLoggedIn) {
+        let links, logoClick;
+        if (this.props.isLoggedIn) {
             logoClick = '/dashboard';
-            logout = (
-                <a
-                    className="content-data-link button-link clickable link-active"
-                    onClick={this.handleLogout}
-                >
-                    Logout
-                </a>
-            );
-
             links = this.state.loggedInRoutes.map((route) => {
-                return (
-                    <NavLink
-                        to={route.to}
-                        activeClassName="link-active"
-                        className="content-data-link button-link"
-                        key={route.to}
-                    >
-                        {route.title}
-                    </NavLink>
-                );
+                return this._findCorrectNavItem(route);
             });
         } else {
             logoClick = '/';
@@ -140,24 +131,51 @@ class Nav extends React.Component<IProps, IState> {
 
                     <div className="collapse navbar-collapse data-right" id="navbarSupportedContent">
                         {links}
-                        {logout}
                     </div>
                 </nav>
                 <div className="pusher" />
             </div>
         );
     }
+
+    private _findCorrectNavItem = (route: IRouteType) => {
+        if (route.title === 'Logout') {
+            return (
+                <NavLink
+                    to={route.to}
+                    className="content-data-link button-link"
+                    key={route.to}
+                    onClick={this.handleLogout}
+                >
+                    {route.title}
+                </NavLink>
+            );
+        } else {
+            return (
+                <NavLink
+                    to={route.to}
+                    className="content-data-link button-link"
+                    key={route.to}
+                >
+                    {route.title}
+                </NavLink>
+            );
+        }
+    }
 }
 
 const mapStateToProps = (state: IStoreState) => {
     return {
         user: state.user,
+        isLoggedIn: state.loginLogout
     };
 };
 
 const mapActionsToProps = {
     onSetUser: setUser,
-    onRemoveUser: removeUser
+    onRemoveUser: removeUser,
+    onLoginUser: setToLoggedIn,
+    onLogoutUser: setToLoggedOut,
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(Nav);

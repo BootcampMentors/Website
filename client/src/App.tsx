@@ -20,7 +20,6 @@ class App extends React.Component<IProps, IState> {
 
   constructor(props: IProps) {
     super(props);
-    console.log(this.props);
   }
 
   render() {

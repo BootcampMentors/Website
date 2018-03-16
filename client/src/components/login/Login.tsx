@@ -9,6 +9,8 @@ import { setUser } from '../../actions/User';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
 import { SHA256 } from 'crypto-js';
+import { setToLoggedIn } from '../../actions/LoginLogout';
+
 interface IState {
     email: string;
     password: string;
@@ -18,6 +20,8 @@ interface IState {
 
 interface IProps extends RouteComponentProps<string> {
     user: IUser;
+    isLoggedIn: boolean;
+    onLoginUser: () => { type: string, isLoggedIn: boolean };
     onSetUser: (user: IUser) => { type: string, user: IUser };
 }
 
@@ -51,6 +55,7 @@ class Login extends React.Component<IProps, IState> {
                 user
             ).then((response: axios.AxiosResponse<IServerResponse<IUser>>) => {
                 this.props.onSetUser(response.data.output);
+                this.props.onLoginUser();
                 this.props.history.push('/dashboard');
             }).catch((err: axios.AxiosError) => {
                 if (err.response && err.response.status === 403) {
@@ -110,11 +115,13 @@ class Login extends React.Component<IProps, IState> {
 const mapStateToProps = (state: IStoreState) => {
     return {
         user: state.user,
+        isLoggedIn: state.loginLogout
     };
 };
 
 const mapActionsToProps = {
     onSetUser: setUser,
+    onLoginUser: setToLoggedIn
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(Login);

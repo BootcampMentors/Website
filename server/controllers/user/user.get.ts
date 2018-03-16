@@ -78,7 +78,9 @@ export const GetUserController = {
         models.User.findById(req.session._id)
             .then((user) => {
                 if (!user) {
-                    return res.status(400).json(getUserNotExistMessage());
+                    // its not 400 or 401 because axios doesn't play nice and keeps
+                    // logging console errors even though im ignoring in the promise catch
+                    return res.status(200).json(getUserNotExistMessage());
                 }
                 user.password = undefined;
                 res.status(200).json(new ServerResponse(true, user));
