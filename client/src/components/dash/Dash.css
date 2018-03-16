@@ -1,0 +1,22 @@
+#welcome-container {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#welcome-container span {
+    font-size: 3em;
+}
+
+#maint {
+    height: 547px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#maint span {
+    font-size: 2.5em;
+    color: #aebdc1;
+}

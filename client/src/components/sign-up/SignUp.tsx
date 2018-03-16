@@ -14,9 +14,13 @@ import * as axios from 'axios';
 import { SHA256 } from 'crypto-js';
 import { routes } from '../../Routes';
 import { IServerResponse } from '../../formats/ServerResponse';
+import { setCamps } from '../../actions/Camp';
+import { ICamp } from '../../formats/Camp.format';
 
 interface IProps extends RouteComponentProps<string> {
     user: IUser;
+    camps: Array<ICamp>;
+    onSetCamp: (camps: Array<ICamp>) => { type: string, camps: Array<ICamp> };
     onSetUser: (user: IUser) => { type: string, user: IUser };
 }
 
@@ -64,6 +68,16 @@ class SignUp extends Component<IProps, IState> {
         this.setState({ camp: event.currentTarget.value });
     }
 
+    async componentWillMount() {
+        if (this.props.camps.length === 0) {
+            const response: axios.AxiosResponse<IServerResponse<Array<ICamp>>> | void = await axios.default.get(routes.camp.get.camps())
+                .catch((err: axios.AxiosError) => console.error(err.response));
+            if (response) {
+                this.props.onSetCamp(response.data.output);
+            }
+        }
+    }
+
     handleSignUp = () => {
         const user = new User();
         for (let value in this.state) {
@@ -75,18 +89,17 @@ class SignUp extends Component<IProps, IState> {
             this.setState({ errors: firstValidErrors });
         } else {
             this._prepareForSignUp(user);
-            console.log(user);
             axios.default.post(
                 routes.user.post.user(),
                 user
             ).then((response: axios.AxiosResponse<IServerResponse<IUser>>) => {
                 if (!response.data.success) {
-                    console.log(response.data);
+                    console.error(response.data);
                 } else {
                     this.props.onSetUser(response.data.output);
                 }
-            }).catch((err: axios.AxiosError) => console.log(err.response));
-            this.props.history.push('/');
+            }).catch((err: axios.AxiosError) => console.error(err.response));
+            this.props.history.push('/dashboard');
         }
     }
 
@@ -98,6 +111,11 @@ class SignUp extends Component<IProps, IState> {
     }
 
     render() {
+        const camps = this.props.camps.map((camp) => {
+            return (
+                <option value={camp._id} key={camp._id}>{camp.name}</option>
+            );
+        });
         return (
             <div>
                 <div className="sign-up-container">
@@ -160,7 +178,7 @@ class SignUp extends Component<IProps, IState> {
                                 onChange={(event) => this.handelSelectChange(event)}
                             >
                                 <option value="" disabled={true} hidden={true} >Select a camp</option>
-                                <option value="Coding Dojo">Coding Dojo</option>
+                                {camps}
                             </select>
                             <span className="text-danger">
                                 {this.getErrorType('camp')}
@@ -196,7 +214,7 @@ class SignUp extends Component<IProps, IState> {
     }
 
     private _prepareForSignUp = (user: IUser) => {
-        // DONT WORRY IM DOING THIS IN THE BACKEND TO RELAX
+        // DONT WORRY IM DOING THIS IN THE BACKEND TO0 RELAX
         user.confirmPassword = '';
         user.password = SHA256(user.password).toString();
     }
@@ -204,12 +222,14 @@ class SignUp extends Component<IProps, IState> {
 
 const mapStateToProps = (state: IStoreState) => {
     return {
-        user: state.user
+        user: state.user,
+        camps: state.camps
     };
 };
 
 const mapActionsToProps = {
-    onSetUser: setUser
+    onSetUser: setUser,
+    onSetCamp: setCamps
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(SignUp);

@@ -37,4 +37,4 @@ server.use(
 
 server.use(logger);
 
-export const PORT = 8000, app = server, setupConfig = setupJson;
+export const PORT = 3000, app = server, setupConfig = setupJson;

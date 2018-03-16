@@ -57,4 +57,11 @@ export const GetCampController = {
                 res.status(200).json(new ServerResponse(true, camp));
             }).catch((err) => res.status(400).json(new ServerResponse(false, null, err)));
     },
+
+    camps: (req: Request, res: Response) => {
+        console.log('found camps');
+        models.Camp.find()
+            .then((camps) => res.status(200).json(new ServerResponse(true, camps)))
+            .catch((err) => res.status(400).json(new ServerResponse(false, null, err)));
+    }
 };

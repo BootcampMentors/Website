@@ -83,5 +83,9 @@ export const GetUserController = {
                 user.password = undefined;
                 res.status(200).json(new ServerResponse(true, user));
             }).catch((err) => res.status(400).json(new ServerResponse(false, null, err)));
+    },
+    logout: (req: Request, res: Response) => {
+        req.session._id = undefined;
+        return res.status(200).json(new ServerResponse(true, 'session deleted'));
     }
 };
