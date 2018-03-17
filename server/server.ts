@@ -6,4 +6,4 @@ import { routes } from './routes/master.route';
 
 routes(app);
 
-app.listen(PORT, () => console.log(`now listening to port ${PORT}`));
+app.listen(PORT, '0.0.0.0', () => console.log(`now listening to port ${PORT}`));

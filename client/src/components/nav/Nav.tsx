@@ -84,6 +84,14 @@ class Nav extends React.Component<IProps, IState> {
         axios.default.get(routes.user.get.logout())
             .catch(() => { return; });
         this.props.history.push('/');
+        this.attemptRemoveBar();
+    }
+
+    attemptRemoveBar = () => {
+        const sandwich = document.getElementById('sandwich-button');
+        if (sandwich && window.innerWidth <= 991) {
+            sandwich.click();
+        }
     }
 
     render() {
@@ -102,6 +110,7 @@ class Nav extends React.Component<IProps, IState> {
                         activeClassName="link-active"
                         className="content-data-link button-link"
                         key={route.to}
+                        onClick={this.attemptRemoveBar}
                     >
                         {route.title}
                     </NavLink>
@@ -114,11 +123,13 @@ class Nav extends React.Component<IProps, IState> {
                     <NavLink
                         to={logoClick}
                         className="content-data-logo content-data-link"
+                        onClick={this.attemptRemoveBar}
                     >
                         Bootcamp Mentors
                     </NavLink>
                     <button
                         className="navbar-toggler"
+                        id="sandwich-button"
                         type="button"
                         data-toggle="collapse"
                         data-target="#navbarSupportedContent"
@@ -156,6 +167,7 @@ class Nav extends React.Component<IProps, IState> {
                     to={route.to}
                     className="content-data-link button-link"
                     key={route.to}
+                    onClick={this.attemptRemoveBar}
                 >
                     {route.title}
                 </NavLink>
