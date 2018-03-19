@@ -125,6 +125,7 @@ class Nav extends React.Component<IProps, IState> {
                         className="content-data-logo content-data-link"
                         onClick={this.attemptRemoveBar}
                     >
+                        <div id="logo-img" />
                         Bootcamp Mentors
                     </NavLink>
                     <button

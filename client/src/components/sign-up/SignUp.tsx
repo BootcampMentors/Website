@@ -214,9 +214,10 @@ class SignUp extends Component<IProps, IState> {
     }
 
     private _prepareForSignUp = (user: IUser) => {
-        // DONT WORRY IM DOING THIS IN THE BACKEND TO0 RELAX
+        // DONT WORRY IM DOING THIS IN THE BACKEND TOO RELAX
         user.confirmPassword = '';
         user.password = SHA256(user.password).toString();
+        user.email = user.email.toLocaleLowerCase();
     }
 }
 

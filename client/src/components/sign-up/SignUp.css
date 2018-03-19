@@ -1,5 +1,12 @@
-.sign-up-container {
+.login-container {
     height: calc(100vh - 148px);
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    background-color: #fafafa;
+}
+
+.sign-up-container {
     display: flex;
     justify-content: center;
     padding: 25px;

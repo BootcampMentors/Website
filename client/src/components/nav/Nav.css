@@ -9,6 +9,9 @@
 
 .content-data-logo {
     font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .content-data-link:hover {
@@ -53,4 +56,11 @@
 
 .clickable {
     cursor: pointer;
+}
+
+#logo-img {
+    background-image: url('/static/imgs/mlogo.png');
+    height: 50px;
+    background-size: contain;
+    width: 50px;
 }

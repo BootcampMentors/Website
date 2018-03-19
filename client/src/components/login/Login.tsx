@@ -44,28 +44,38 @@ class Login extends React.Component<IProps, IState> {
     }
 
     handleLogin = () => {
-        this._checkEmailValidation();
-        const user: IUser = this._getStateAsUser();
-        axios.default.post(
-            routes.user.post.login(),
-            user
-        ).then((response: axios.AxiosResponse<IServerResponse<IUser>>) => {
-            this.props.onSetUser(response.data.output);
-            this.props.onLoginUser();
-            this.props.history.push('/dashboard');
-        }).catch((err: axios.AxiosError) => {
-            if (err.response && err.response.status === 403) {
-                this.setState({ validationError: 'Credentials invalid' });
-            } else {
-                console.error(err.response);
-            }
-        });
+        const isEmailValid = this._checkEmailValidation();
+        if (isEmailValid) {
+            const user: IUser = this._getStateAsUser();
+            axios.default.post(
+                routes.user.post.login(),
+                user
+            ).then((response: axios.AxiosResponse<IServerResponse<IUser>>) => {
+                this.props.onSetUser(response.data.output);
+                this.props.onLoginUser();
+                this.props.history.push('/dashboard');
+            }).catch((err: axios.AxiosError) => {
+                if (err.response && err.response.status === 403) {
+                    this.setState({ validationError: 'Incorrect password' });
+                } else if (err.response && err.response.status === 400) {
+                    this.setState({ emailError: 'Email does not exist' });
+                } else {
+                    console.error(err.response);
+                }
+            });
+        }
+    }
+
+    loginKeyboardAttempt = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === 'Enter') {
+            this.handleLogin();
+        }
     }
 
     render() {
         return (
             <div>
-                <div className="sign-up-container">
+                <div className="login-container">
                     <div className="sign-up-form">
                         <h3>Log in</h3>
                         <div className="form-data-input">
@@ -76,6 +86,7 @@ class Login extends React.Component<IProps, IState> {
                                 placeholder="Email"
                                 value={this.state.email}
                                 onChange={(event) => this.handleInputChange(event, 'email')}
+                                onKeyPress={(event) => this.loginKeyboardAttempt(event)}
                             />
                             <span className="text-danger">
                                 {this.state.emailError}
@@ -89,6 +100,7 @@ class Login extends React.Component<IProps, IState> {
                                 placeholder="Password"
                                 value={this.state.password}
                                 onChange={(event) => this.handleInputChange(event, 'password')}
+                                onKeyPress={(event) => this.loginKeyboardAttempt(event)}
                             />
                             <span className="text-danger">
                                 {this.state.validationError}
@@ -107,11 +119,13 @@ class Login extends React.Component<IProps, IState> {
     }
 
     private _checkEmailValidation = () => {
-        if (!isEmail(this.state.email)) {
-            this.setState({ emailError: 'Email is invalid' });
+        const isStateEmail = isEmail(this.state.email);
+        if (!isStateEmail) {
+            this.setState({ emailError: 'Email is invalid', validationError: '' });
         } else {
-            this.setState({ emailError: '' });
+            this.setState({ emailError: '', validationError: '' });
         }
+        return isStateEmail;
     }
 
     private _getStateAsUser = (): IUser => {

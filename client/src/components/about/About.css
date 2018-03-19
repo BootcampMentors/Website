@@ -86,3 +86,42 @@ a {
 .info-item h3 {
     margin-top: 20px;
 }
+
+.about-paragraph {
+    margin-bottom: 25px;
+}
+
+.container-c{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 1200px){
+    .container-c {
+        max-width: 1140px;
+    }
+}
+@media (min-width: 992px){
+    .container-c {
+        max-width: 1100px;
+    }
+}
+@media (min-width: 768px){
+    .container-c {
+        max-width: 850px;
+    }
+}
+
+@media(max-width: 992px){   
+    .about-container {
+        padding: 70px;
+    }
+}
+@media (min-width: 576px){
+    .container-c {
+        max-width: 740px;
+    }
+}
