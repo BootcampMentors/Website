@@ -1,12 +1,12 @@
 {
     "compilerOptions": {
-        "target": "es2016",
+        "target": "es5",
         "module": "commonjs",
         "noImplicitAny": false,
         "removeComments": true,
         "preserveConstEnums": true,
         "sourceMap": false,
-        "watch": true,
+        "watch": false,
         "allowJs": true,
         "lib": [
             "es5",
