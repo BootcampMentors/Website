@@ -21,7 +21,7 @@ export class AboutUs extends Component {
                         up with mentors to match.
                     </p>
                     <p className="about-paragraph">
-                        As alumni of <a href="https://codingdojo.com">Coding Dojo</a> ourselves,
+                        As alumni of <a href="http://codingdojo.com">Coding Dojo</a> ourselves,
                         our mission is to reach back out to students in order to grow the community
                         between peers sharing the same goal — learning new technologies and improving our skillsets.
                         Mentors and students alike, we never stop learning.
