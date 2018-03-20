@@ -119,22 +119,27 @@
     text-align: center;
     margin: 0 auto;
     line-height: 1.6em;
+    text-decoration: none;
 }
 
 .btn-sign-up-index:hover {
     background-color: #ffbf4b;
     transform: scale(1.03);
+    text-decoration: none;
+    color: white;
 }
 
 .btn-sign-up-index:focus {
     outline: none;
     box-shadow: none;
     background-color: #ffbf4b;
+    color: white;
 }
 
 .btn-sign-up-index:active {
     animation: btn-clicked 350ms ease-in-out 0ms 1;
     animation-fill-mode: forwards;
+    color: white;
 }
 
 .index-feature {

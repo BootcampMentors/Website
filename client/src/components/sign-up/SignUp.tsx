@@ -171,13 +171,13 @@ class SignUp extends Component<IProps, IState> {
                             />
                         </div>
                         <div className="form-data-input">
-                            <span>Camp:</span>
+                            <span>Bootcamp:</span>
                             <select
                                 className="form-control"
                                 value={this.state.camp}
                                 onChange={(event) => this.handelSelectChange(event)}
                             >
-                                <option value="" disabled={true} hidden={true} >Select a camp</option>
+                                <option value="" disabled={true} hidden={true} >Select a bootcamp</option>
                                 {camps}
                             </select>
                             <span className="text-danger">

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './FrontPage.css';
+import { Link } from 'react-router-dom';
 
 const getLogoHeader = () => {
     return (
@@ -23,7 +24,9 @@ const getSignUpBanner = () => {
         <div className="banner-container">
             <div>
                 <h4>Sign up to get your mentor today!</h4>
-                <button className="btn btn-lg btn-block btn-sign-up-index">Sign up now!</button>
+                <Link to="/sign-up" className="btn btn-lg btn-block btn-sign-up-index">
+                    Sign up now!
+                </Link>
             </div>
         </div>
     );
