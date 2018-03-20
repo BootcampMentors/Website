@@ -21,7 +21,7 @@ class Dashboard extends React.Component<IProps, IState> {
                     <span>Welcome {this.props.user.name}!</span>
                 </div>
                 <section id="maint">
-                    <span>Site still being build - more features to come! :)</span>
+                    <span>Dashboard is still being built - more features to come soon! :)</span>
                 </section>
             </div>
         );
