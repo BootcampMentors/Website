@@ -16,15 +16,14 @@ export class AboutUs extends Component {
                     <p className="about-paragraph">
                         We are a team of pro bono software developers and industry professionals working to
                         bridge the gap between students and graduates of coding bootcamps.
-
                         Bootcampers are driven, determined individuals and we wanted to pair them
                         up with mentors to match.
                     </p>
                     <p className="about-paragraph">
                         As alumni of <a href="http://codingdojo.com">Coding Dojo</a> ourselves,
                         our mission is to reach back out to students in order to grow the community
-                        between peers sharing the same goal — learning new technologies and improving our skillsets.
-                        Mentors and students alike, we never stop learning.
+                        between peers sharing the same goals: learning new technologies and improving our skillsets.
+                        We understand that mentors and students alike, we never stop learning!
                     </p>
                     <p className="about-paragraph">
                         Our vision is to connect like-minded individuals with qualified mentors who
