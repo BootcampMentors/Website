@@ -76,7 +76,7 @@ class Login extends React.Component<IProps, IState> {
         return (
             <div>
                 <div className="login-container">
-                    <div className="sign-up-form">
+                    <div className="login-form">
                         <h3>Log in</h3>
                         <div className="form-data-input">
                             <span>Email:</span>

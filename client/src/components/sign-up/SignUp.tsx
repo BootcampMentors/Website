@@ -118,7 +118,7 @@ class SignUp extends Component<IProps, IState> {
         });
         return (
             <div>
-                <div className="sign-up-container">
+                <div className="login-container">
                     <div className="sign-up-form">
                         <h3>Sign Up</h3>
                         <div className="form-data-input">
