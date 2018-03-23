@@ -13,6 +13,9 @@ const user = {
     post: {
         user: () => { return `${USER_ROOT}`; },
         login: () => { return `${USER_ROOT}/login`; }
+    },
+    put: {
+        setmentor: () => { return `${USER_ROOT}/setmentor`; }
     }
 };
 

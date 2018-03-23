@@ -6,8 +6,8 @@ export interface IUser {
     name: string;
     email: string;
     password: string;
-    isAdmin: string;
-    isMentor: string;
+    isAdmin: boolean;
+    isMentor: boolean;
     mentors: Array<IUserModel>;
     mentees: Array<IUserModel>;
     camp: ICampModel | string;
@@ -18,8 +18,8 @@ export class User implements IUser {
     name: string;
     email: string;
     password: string;
-    isAdmin: string;
-    isMentor: string;
+    isAdmin: boolean;
+    isMentor: boolean;
     mentors: IUserModel[];
     mentees: IUserModel[];
     camp: ICampModel | string;

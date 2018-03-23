@@ -4,6 +4,7 @@ import './Dash.css';
 import { connect } from 'react-redux';
 import { IStoreState } from '../../StoreState';
 import { IUser } from '../../formats/User.format';
+import Mentor from './mentor/Mentor';
 
 interface IProps {
     user: IUser;
@@ -18,11 +19,12 @@ class Dashboard extends React.Component<IProps, IState> {
         return (
             <div>
                 <div id="welcome-container">
-                    <span>Welcome {this.props.user.name}!</span>
+                    <span className="section-title" >Welcome {this.props.user.name}!</span>
                 </div>
-                <section id="maint">
+                {/* <section id="maint">
                     <span>Dashboard is still being built - more features to come soon! :)</span>
-                </section>
+                </section> */}
+                <Mentor />
             </div>
         );
     }

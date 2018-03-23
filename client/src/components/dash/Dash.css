@@ -17,6 +17,9 @@
 }
 
 #maint span {
-    font-size: 2.5em;
     color: #aebdc1;
+}
+
+.section-title {
+    font-size: 2.5em;
 }
