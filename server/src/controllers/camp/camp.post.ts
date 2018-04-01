@@ -8,6 +8,21 @@ const models = {
 };
 
 export const PostCampController = {
+
+    /**
+     * create a new camp
+     * 
+     * @example
+     * "POST :// api/camps"
+     * 
+     * // has incomming request 
+     * // with application/json as Content-Type
+     * 
+     * // example json body
+     * req.body = {
+     *      camp: "Coding Dojo"
+     * }
+     */
     camp: (req: Request, res: Response) => {
         const newCamp = new models.Camp(req.body);
         newCamp.save()

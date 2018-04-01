@@ -24,7 +24,7 @@ export const PostUserController = {
      * // with application/json as Content-Type
      * 
      * // example json body
-     * const body = {
+     * req.body = {
      *      camp: "Coding Dojo",
      *      email: "Emil Choparinov",
      *      username: "Emil",
@@ -53,7 +53,7 @@ export const PostUserController = {
      * // with application/json as Content-Type
      * 
      * // example json body
-     * const body = {
+     * req.body = {
      *      email: "Emil Choparinov",
      *      // make sure to hash this before sending the json
      *      password: "Password"
